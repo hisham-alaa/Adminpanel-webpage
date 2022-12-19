@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\style.css">
+    <title >Control Data-Courses</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1><a href="avaliableHalls.html">AdminPanel</a> </h1>
+            <nav>
+                <ul>
+                    <li><a href="avaliableHalls.html">Reports</a></li>
+                    <li class="requested"><a href="controlHalls.html">Control Data</a></li>
+                    <li><a href="complains.html">Complains</a></li>
+                    <li><a href="requests.html">Requests</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <aside>
+            <ul class="sidebar-list">
+                <li><a href="controlHalls.html">Hall's Data</a></li>
+                <li><a href="controlDoctors.html">Doctor's Data</a></li>
+                <li class="requested"><a href="controlcourses.html">Course's Data</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <form>
+                <div class="inputs">
+                    <input type="text" id="crsname" placeholder="Course name">
+                    <input style="width: 10%;" id="crscode" type="text" placeholder="Code">
+                    
+                    <select style="width: 12%;" id="program" name="program">
+                        <optgroup label="Program">
+                            <option value="CS">CS</option>
+                            <option value="Math">Math</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Statistics">Statistics</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Chemistry">Chemistry</option>
+                        </optgroup>
+                    </select>
+                    
+                    <select style="width: 12%;" name="level" id="Level">
+                        <optgroup label="Level">
+                            <option value="Level one">Level one</option>
+                            <option value="Level Two">Level Two</option>
+                            <option value="Level Three">Level Three</option>
+                            <option value="Level Four">Level Four</option>
+                        </optgroup>
+                    </select>
+
+                    <select style="width: 10%;" id="semester" name="semester">
+                        <optgroup label="Semester">
+                            <option value="CS">Fall</option>
+                            <option value="Math">Spring</option>
+                            <option value="Math">Summer</option>
+                        </optgroup>
+                    </select>
+                    <select style="width: 8%; "name="credithours" id="credithours">
+                        <optgroup label="Credit Hours">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </optgroup>
+                    </select>
+
+                    
+                    <input style="width: 13%;" type="text" id="hallname" placeholder="Hall name">
+                    <input  style="width: 15%;" type="text" id="doctorname" placeholder="Doctor name">
+                    
+
+                    
+
+                    <select style="width: 12%;" name="Day" id="day">
+                        <optgroup label="Day">
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thrusday">Thrusday</option>
+                        </optgroup>
+                    </select>
+
+                    <div style="width: 22%; "class="from">
+                        <label for="From">From : </label>
+                        <input type="time" id="From">
+                    </div>
+                    <div class="to">
+                        <label for="To">To : </label>
+                        <input type="time" id="To">
+                    </div>
+
+                    <div class="chk">
+                        <input type="checkbox" id="checkb">
+                        <label for="checkb"> has practical</label>
+                    </div>
+                </div>
+                <div class="btns">
+                    <input type="reset" name="reset" id="reset" value="Clear">
+                    <input type="button" name="add" id="submitbtn" value="Submit" onclick="AddRow()">
+                </div>
+
+            </form>
+            <div class="tabl">
+            <table id="tablebody">
+                <thead>
+                    <th>No</th>
+                    <th>Course name</th>
+                    <th>Course code</th>
+                    <th>program</th>
+                    <th>Credit Hours</th>
+                    <th>Practical</th>
+                </thead>
+                <tbody >
+
+                    <tr>
+                        <td>1</td>
+                        <td>data Structure</td>
+                        <td>comp207</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Syntax</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Image Processing</td>
+                        <td>comp407</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>operating System</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>operating System</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>operating System</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>operating System</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>operating System</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>operating System</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>operating System</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>operating System</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>operating System</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>operating System</td>
+                        <td>comp305</td>
+                        <td>CS</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            </div>
+        </main>
+    </div>
+    <script>
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+        var list5 = [];
+        var list6 = [];
+        var list7 = [];
+
+        var n = 1;
+        var x = 0;
+
+        function AddRow(){
+
+            var AddRown = document.getElementById('tablebody');
+            var NewRow = AddRown.insertRow(n);
+
+            list1[x] = document.getElementById("crsname").value;
+            list2[x] = document.getElementById("crscode").value;
+            list3[x] = document.getElementById("program").value;
+            list4[x] = document.getElementById("credithours").value;
+            list5[x] = document.getElementById("checkb").value;
+
+            document.getElementById("crsname").value="";
+            document.getElementById("crscode").value="";
+            document.getElementById("program").value="";
+            document.getElementById("credithours").value="";
+            document.getElementById("checkb").value="";
+
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+            var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+            var cel6 = NewRow.insertCell(5);
+
+
+            cel1.innerHTML = n + " ";
+            cel2.innerHTML = list1[x];
+            cel3.innerHTML = list2[x];
+            cel4.innerHTML = list3[x];
+            cel5.innerHTML = list4[x];
+            cel6.innerHTML = list5[x];
+
+            n++;
+            x++;
+        }
+
+    </script>   
+</body>
+
+
+
+</html>

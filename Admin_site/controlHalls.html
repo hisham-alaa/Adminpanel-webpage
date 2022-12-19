@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\style.css">
+    <title >Control Data-Halls</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1><a href="avaliableHalls.html">AdminPanel</a> </h1>
+            <nav>
+                <ul>
+                    <li><a href="avaliableHalls.html">Reports</a></li>
+                    <li class="requested"><a href="controlHalls.html">Control Data</a></li>
+                    <li><a href="complains.html">Complains</a></li>
+                    <li><a href="requests.html">Requests</a></li>
+                </ul>
+            </nav>
+        </header>
+        <aside>
+            <ul class="sidebar-list">
+                <li class="requested"><a href="controlHalls.html">Hall's Data</a></li>
+                <li><a href="controlDoctors.html">Doctor's Data</a></li>
+                <li><a href="controlcourses.html">Course's Data</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <form action="get">
+                <div class="inputs">
+                    <input type="text" id="hallname" placeholder="Hall Name">
+                    <input type="number" id="capacity" placeholder="Capacity">
+                    <input type="text" id="supname" placeholder="Supervisor name">
+                    <input type="text" id="supphone" placeholder="Supervisor Phone">
+                    
+                    <select id="showtype" name="showtype">
+                        <optgroup label="Show Type" >
+                            <option value="datashow">Data Show</option>
+                            <option value="screen">Screen</option>
+                            <option value="none">none</option>
+                        </optgroup>
+                    </select>
+                    <select id="halltype" name="halltype">
+                        <optgroup label="Hall Type">
+                            <option value="semenar">Semenar</option>
+                            <option value="hall">Hall</option>
+                            <option value="class">Class</option>
+                            <option value="lab">Lab</option>
+                        </optgroup>
+                    </select>
+                    <select id="status" name="status">
+                        <optgroup label="Status">
+                            <option value="postponed">postponed</option>
+                            <option value="avaliable">Avaliable</option>
+                            <option value="underconstructions">Under Construction</option>
+                        </optgroup>
+                    </select>
+                    
+                    
+                    <div class="chk" style="width: 23%;">
+                        <input type="checkbox" id="aircond">
+                        <label for="aircond"> Air Conditioned</label>
+                    </div>
+                    <div class="chk">
+                        <input type="checkbox" id="isspecial" >
+                        <label for="isspecial"> Special</label>
+                    </div>
+
+                </div>
+                <div class="btns">
+                    <input type="reset" name="reset" id="reset" value="Clear">
+                    <input type="button" name="add" id="submitbtn" value="Submit" onclick="AddRow()">
+                </div>
+            </form>
+            <div class="tabl">
+                <table id="tablebody">
+                    <thead>
+                        <th>No</th>
+                        <th>Hall name</th>
+                        <th>Capacity</th>
+                        <th>Show Type</th>
+                        <th>Hall Type</th>
+                        <th>Status</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>hegazy</td>
+                            <td>100</td>
+                            <td>none</td>
+                            <td>Hall</td>
+                            <td>Public</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>hamad</td>
+                            <td>300</td>
+                            <td>Data Show</td>
+                            <td>Hall</td>
+                            <td>Public</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Noah</td>
+                            <td>300</td>
+                            <td>Data Show</td>
+                            <td>Hall</td>
+                            <td>Public</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Class 9</td>
+                            <td>50</td>
+                            <td>Data sShow</td>
+                            <td>Class</td>
+                            <td>Public</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Hall 105</td>
+                            <td>50</td>
+                            <td>Screen</td>
+                            <td>class</td>
+                            <td>Public</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Bahgat lab</td>
+                            <td>50</td>
+                            <td>DataShow</td>
+                            <td>Hall</td>
+                            <td>Public</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script>
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+        var list5 = [];
+
+        var n = 1;
+        var x = 0;
+
+        function AddRow(){
+
+            var AddRown = document.getElementById('tablebody');
+            var NewRow = AddRown.insertRow(n);
+
+            list1[x] = document.getElementById("hallname").value;
+            list2[x] = document.getElementById("capacity").value;
+            list3[x] = document.getElementById("showtype").value;
+            list4[x] = document.getElementById("halltype").value;
+            list5[x] = document.getElementById("status").value;
+
+            document.getElementById("hallname").value="";
+            document.getElementById("capacity").value="";
+            document.getElementById("showtype").value="";
+            document.getElementById("halltype").value="";
+            document.getElementById("status").value="";
+
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+            var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+            var cel6 = NewRow.insertCell(5);
+
+            cel1.innerHTML = n + " ";
+            cel2.innerHTML = list1[x];
+            cel3.innerHTML = list2[x];
+            cel4.innerHTML = list3[x];
+            cel5.innerHTML = list4[x];
+            cel6.innerHTML = list5[x];
+
+            n++;
+            x++;
+        }
+
+    </script> 
+</body>
+</html>

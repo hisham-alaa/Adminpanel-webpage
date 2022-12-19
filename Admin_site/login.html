@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\style.css">
+    <title>LogIn</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="box">
+            <h1>LogIn</h1>
+            <form target="_self">
+                <div class="txt-field">
+                    <input type="text"id="email" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+                <div class="txt-field">
+                    <input type="password"id="pass" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+                <div class="pass"><a href="hallSchedule.html">Forgot Password?</a></div>
+                <input type="button" value="LogIn" id="login" onclick="LogInCheck(this)">
+            </form>
+        </div>
+    </div>
+    <script>
+        var email="admin@admin.com";
+        var pass="password123";
+
+        function LogInCheck(){
+            
+            if(document.getElementById("email").value==email &&document.getElementById("pass").value==pass  )
+                location.href='avaliableHalls.html';
+            else{
+                window.alert("Email or password is invalid");
+            }
+        }
+
+    </script>
+</body>
+</html>

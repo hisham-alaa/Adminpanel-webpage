@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\style.css">
+    <title >Control Data-Doctors</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1><a href="avaliableHalls.html">AdminPanel</a> </h1>
+            <nav>
+                <ul>
+                    <li><a href="avaliableHalls.html">Reports</a></li>
+                    <li class="requested"><a href="controlHalls.html">Control Data</a></li>
+                    <li><a href="complains.html">Complains</a></li>
+                    <li><a href="requests.html">Requests</a></li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <aside>
+            <ul class="sidebar-list">
+                <li><a href="controlHalls.html">Hall's Data</a></li>
+                <li class="requested"><a href="controlDoctors.html">Doctor's Data</a></li>
+                <li><a href="controlcourses.html">Course's Data</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <form action="get">
+                <div class="inputs">
+                    <input type="text" id="name" placeholder="Name">
+                    <input type="email"style="width: 25%; " id="email" placeholder="Email">
+                    <input type="text" id="phone" placeholder="Phone">
+                    
+                    <select id="special" name="sepcail">
+                        <optgroup label="Spectialization">
+                            <option value="CS">Computer Sience</option>
+                            <option value="Math">Math</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Statistics">Statistics</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Chemistry">Chemistry</option>
+                        </optgroup>
+                    </select>
+                    
+                </div>
+                <div class="btns">
+                    <input type="reset" name="reset" id="reset" value="Clear">
+                    <input type="button" name="add" id="submitbtn" value="Submit" onclick="AddRow()">
+                </div>
+            </form>
+
+            <div class="tabl">
+                <table id="tablebody">
+                    <thead>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Specialization</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>DR.Wael Zakarya</td>
+                            <td>WaelZakarya67@gmail.com</td>
+                            <td>01564808233</td>
+                            <td>computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>DR.Ahmed Abd ElGwad</td>
+                            <td>ahmedsonbaty269@gmail.com</td>
+                            <td>01224578932</td>
+                            <td>Mathematics</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>DR.Hatem Baheg</td>
+                            <td>hatembaheg@gmail.com</td>
+                            <td>01202648694</td>
+                            <td>Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>DR.Mohamed Emad</td>
+                            <td>mohamedemad645@gmail.com</td>
+                            <td>01525651212</td>
+                            <td>Chemistry</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>DR.mohamed Hashem</td>
+                            <td>mohmedhashem387@gmail.com</td>
+                            <td>01224578932</td>
+                            <td>Mathematics</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>DR.sayed Anwar</td>
+                            <td>sayedanwar132@gmail.com</td>
+                            <td>0123652152</td>
+                            <td>Mathematics</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </main>
+    </div>
+
+    <script>
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+
+        var n = 1;
+        var x = 0;
+
+        function AddRow(){
+
+            var AddRown = document.getElementById('tablebody');
+            var NewRow = AddRown.insertRow(n);
+
+            list1[x] = document.getElementById("name").value;
+            list2[x] = document.getElementById("email").value;
+            list3[x] = document.getElementById("phone").value;
+            list4[x] = document.getElementById("special").value;
+
+            document.getElementById("name").value="";
+            document.getElementById("phone").value="";
+            document.getElementById("email").value="";
+            document.getElementById("special").value="";
+
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+            var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+
+
+            cel1.innerHTML = n + " ";
+            cel2.innerHTML = list1[x];
+            cel3.innerHTML = list2[x];
+            cel4.innerHTML = list3[x];
+            cel5.innerHTML = list4[x];
+
+            n++;
+            x++;
+        }
+
+    </script>
+</body>
+</html>
