@@ -14,8 +14,9 @@
                 <div class="txt-field">
                     <input type="text"id="email" required>
                     <span></span>
-                    <label>Username</label>
+                    <label>Email</label>
                 </div>
+
                 <div class="txt-field">
                     <input type="password"id="pass" required>
                     <span></span>
@@ -26,16 +27,20 @@
             </form>
         </div>
     </div>
+
     <script>
         var email="admin@admin.com";
         var pass="password123";
 
         function LogInCheck(){
-            
-            if(document.getElementById("email").value==email &&document.getElementById("pass").value==pass  )
+            var ma=document.getElementById("email");
+            var pa=document.getElementById("pass");
+            if( ma.value==email && pa.value==pass )
                 location.href='avaliableHalls.html';
             else{
-                window.alert("Email or password is invalid");
+                pa.value="";
+                window.alert(" Email or password is invalid ");
+                
             }
         }
 
